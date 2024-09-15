@@ -1,6 +1,12 @@
 import css from "./ErrorMessage.module.css";
 
-const ErrorMessage = ({ title, message, suggestion }) => {
+interface ErrorMessageProps{
+  title: string;
+  message:string;
+  suggestion:string;
+}
+
+const ErrorMessage = ({ title, message, suggestion }:ErrorMessageProps) => {
   return (
     <div className={css.container}>
       <div className={css.title}>{title}</div>

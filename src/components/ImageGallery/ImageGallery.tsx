@@ -1,8 +1,16 @@
+import { FC } from "react";
+import { Photo } from "../../services/api";
 import Grid from "../Grid/Grid";
 import GridItem from "../GridItem/GridItem";
 import ImageCard from "../ImageCard/ImageCard";
 
-function ImageGallery({ images, openModal }) {
+interface ImageGalleryProps{
+  images: Photo[];
+  openModal: (url: string, alt: string) => void;
+}
+
+
+const ImageGallery: FC<ImageGalleryProps>=({ images, openModal }) =>{
   return (
     <Grid>
       {images.map((image) => {
