@@ -5,17 +5,13 @@ import SearchBar from "../SearchBar/SearchBar";
 import Loader from "../Loader/Loader";
 import getPhotos, { Photo} from "../../services/api";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
-import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import ErrorMessage, { ErrorMessageProps } from "../ErrorMessage/ErrorMessage";
 import NotFound from "../NotFound/NotFound";
 import ImageModal from "../ImageModal/ImageModal";
 
 
 
-type Error = {
-  title: string;
-  message: string;
-  suggestion: string;
-};
+
 
 function App() {
   const [query, setQuery] = useState<string>("");
@@ -25,7 +21,7 @@ function App() {
   const [isEmpty, setIsEmpty] = useState<boolean>(false);
   const [showBtn, setShowBtn] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
-  const [errorDetails, setErrorDetails] = useState<Error>({
+  const [errorDetails, setErrorDetails] = useState<ErrorMessageProps>({
     title: "",
     message: "",
     suggestion: "",
