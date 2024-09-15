@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import "./App.css";
 import ImageGallery from "../ImageGallery/ImageGallery";
 import SearchBar from "../SearchBar/SearchBar";
@@ -13,7 +13,7 @@ import ImageModal from "../ImageModal/ImageModal";
 
 
 
-function App() {
+const App:FC=() =>{
   const [query, setQuery] = useState<string>("");
   const [page, setPage] = useState<number>(1);
   const [images, setImages] = useState<Photo[]>([]);
